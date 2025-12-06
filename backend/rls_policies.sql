@@ -1,3 +1,22 @@
+-- Simplify RLS policies for demo (no authentication required)
+-- use these for demo
+DROP POLICY IF EXISTS leads_select_policy ON leads;
+CREATE POLICY leads_select_policy ON leads FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS applications_select_policy ON applications;
+CREATE POLICY applications_select_policy ON applications FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS tasks_select_policy ON tasks;
+CREATE POLICY tasks_select_policy ON tasks FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS tasks_update_policy ON tasks;
+CREATE POLICY tasks_update_policy ON tasks FOR UPDATE USING (true);
+
+
+
+-- production RLS policies requires auth
+
+
 CREATE TABLE IF NOT EXISTS users (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     tenant_id UUID NOT NULL,
