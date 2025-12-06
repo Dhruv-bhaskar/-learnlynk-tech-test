@@ -127,5 +127,3 @@ When a user initiates payment, create a `payment_requests` record with status "p
 Handle the `checkout.session.completed` webhook by verifying the signature with `stripe.webhooks.constructEvent()`, updating `payment_requests` to "succeeded", and updating the application's payment_status and stage. Wrap webhook processing in a database transaction for consistency.
 
 Listen for `checkout.session.expired` and `payment_intent.payment_failed` events to handle failures.
-
-just update the folder structure in this read me. i am giving you my correct folder structure.
