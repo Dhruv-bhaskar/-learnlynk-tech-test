@@ -35,7 +35,7 @@ echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key" >> .env.local
 npm run dev
 ```
 
-Open: open your local deployment link
+Open: open your local deployment link (http://localhost:3000/dashboard/today)
 
 ### 4. Add Test Data
 
